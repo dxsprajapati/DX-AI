@@ -1,5 +1,8 @@
 package com.dxprajapati;
 
+import java.io.FileWriter;
+import java.time.LocalDateTime;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -79,6 +82,8 @@ public class GroqService {
             assistant.put("content", botReply);
 
             conversationHistory.put(assistant);
+            
+            saveChatLog(userMessage, botReply);
 
             return botReply;
 
@@ -87,6 +92,29 @@ public class GroqService {
             e.printStackTrace();
 
             return "અત્યારે AI service ઉપલબ્ધ નથી 😔";
+        }
+    }
+    private void saveChatLog(String userMsg, String aiReply) {
+
+        try {
+
+            String logFile = "chat-log.txt";
+
+            FileWriter fw = new FileWriter(logFile, true);
+
+            LocalDateTime now = LocalDateTime.now();
+
+            fw.write("\n====================================\n");
+            fw.write("TIME : " + now.toString() + "\n");
+            fw.write("USER : " + userMsg + "\n");
+            fw.write("AI   : " + aiReply + "\n");
+            fw.write("====================================\n");
+
+            fw.close();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
     }
 }
