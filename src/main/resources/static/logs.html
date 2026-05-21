@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DX-AI Logs</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#111;
+            color:white;
+            padding:20px;
+        }
+
+        .card{
+            background:#1e1e1e;
+            padding:15px;
+            margin-bottom:15px;
+            border-radius:10px;
+        }
+
+        .msg{
+            color:#00ff99;
+        }
+
+        .reply{
+            color:#00bfff;
+        }
+
+        .time{
+            color:gray;
+            font-size:12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>DX-AI Chat Logs</h1>
+
+<div id="logs"></div>
+
+<script>
+
+fetch('/api/chat/logs')
+.then(res => res.json())
+.then(data => {
+
+    let html = "";
+
+    data.reverse().forEach(log => {
+
+        html += `
+            <div class="card">
+                <div class="msg">
+                    <b>User:</b> ${log.userMessage}
+                </div>
+
+                <br>
+
+                <div class="reply">
+                    <b>AI:</b> ${log.aiResponse}
+                </div>
+
+                <br>
+
+                <div class="time">
+                    ${log.time}
+                </div>
+            </div>
+        `;
+    });
+
+    document.getElementById("logs").innerHTML = html;
+});
+
+</script>
+
+</body>
+</html>
