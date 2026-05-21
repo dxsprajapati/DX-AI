@@ -16,4 +16,9 @@ public class ChatController {
 
         return groqService.chat(request.getMessage());
     }
+    
+    @GetMapping("/ping")
+    public String ping() {
+        return "DX-AI Running";
+    }
 }
