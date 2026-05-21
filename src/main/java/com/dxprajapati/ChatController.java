@@ -13,29 +13,29 @@ public class ChatController {
     @Autowired
     private GroqService groqService;
 
-    @Autowired
-    private ChatLogRepository chatLogRepository;
+//    @Autowired
+//    private ChatLogRepository chatLogRepository;
 
     @PostMapping
     public String chat(@RequestBody ChatRequest request) {
 
         String response = groqService.chat(request.getMessage());
 
-        ChatLog log = new ChatLog(
-                request.getMessage(),
-                response,
-                LocalDateTime.now()
-        );
+//        ChatLog log = new ChatLog(
+//                request.getMessage(),
+//                response,
+//                LocalDateTime.now()
+//        );
 
-        chatLogRepository.save(log);
+        //chatLogRepository.save(log);
 
         return response;
     }
 
-    @GetMapping("/logs")
-    public Object getLogs() {
-        return chatLogRepository.findAll();
-    }
+//    @GetMapping("/logs")
+//    public Object getLogs() {
+//        return chatLogRepository.findAll();
+//    }
 
     @GetMapping("/ping")
     public String ping() {
