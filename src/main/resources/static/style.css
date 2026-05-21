@@ -43,7 +43,7 @@ body{
 
     height:70px;
 
-    background: #548b88;
+    background: #65dfc3;
 
     color:white;
 
@@ -247,7 +247,7 @@ body{
 
     height:90px;
 
-    background:#548b88;
+    background:#65dfc3;
 
     padding:15px 20px;
 
@@ -365,6 +365,7 @@ body{
         padding:8px 12px;
 
         font-size:12px;
+        background: #01834d;
     }
 
     /* CHAT BODY */
@@ -396,6 +397,7 @@ body{
     .input-area input{
 
         font-size:16px;
+        
     }
 
     .input-area button{
@@ -405,6 +407,7 @@ body{
         height:40px;
 
         font-size:14px;
+        background: #01834d
     }
 
     /* MESSAGE */
