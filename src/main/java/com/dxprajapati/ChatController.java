@@ -26,7 +26,7 @@ public class ChatController {
 
 ખૂબ જલ્દી હું વધુ સારા અનુભવ સાથે ફરીથી તૈયાર થઈને તમને જાણ કરીશ 🚀
 
-— દક્ષેશ પ્રજાપતિ AI સર્વિસ"
+— દક્ષેશ પ્રજાપતિ AI સર્વિસ";
 //        ChatLog log = new ChatLog(
 //                request.getMessage(),
 //                response,
