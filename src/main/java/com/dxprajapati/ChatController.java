@@ -18,9 +18,15 @@ public class ChatController {
 
     @PostMapping
     public String chat(@RequestBody ChatRequest request) {
+        //groqService.chat(request.getMessage());
+        String response = "હાલમાં હું મારી AI સર્વિસને વધુ સારી અને સ્માર્ટ બનાવવા માટે કામ કરી રહ્યો છું 😊
 
-        String response = groqService.chat(request.getMessage());
+એટલા માટે અત્યારે હું તમને AI આધારિત યોગ્ય જવાબ આપી શકતો નથી.
+થોડો સમય આપશો 🙏
 
+ખૂબ જલ્દી હું વધુ સારા અનુભવ સાથે ફરીથી તૈયાર થઈને તમને જાણ કરીશ 🚀
+
+— દક્ષેશ પ્રજાપતિ AI સર્વિસ"
 //        ChatLog log = new ChatLog(
 //                request.getMessage(),
 //                response,
